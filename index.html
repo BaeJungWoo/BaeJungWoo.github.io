@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="assets/images/logo.ico" type="image/x-icon">
     <style>
 /* ===== VARIABLES ===== */
 :root[data-theme="dark"] {
@@ -164,7 +165,17 @@ section{padding:96px 0}
 .pub-title{font-family:'Space Grotesk',sans-serif;font-size:1.02rem;font-weight:600;color:var(--t1);line-height:1.4;margin-bottom:.45rem}
 .pub-authors{font-size:.84rem;color:var(--t2);margin-bottom:.38rem}
 .pub-authors strong{color:var(--accent);font-weight:600}
-.pub-venue{font-size:.81rem;color:var(--t3);font-style:italic;margin-bottom:1rem}
+.pub-venue{font-size:.81rem;color:var(--t3);font-style:italic;margin-bottom:.6rem}
+.pub-abstract{display:none;margin:.1rem 0 .9rem;background:var(--a-dim);border-radius:10px;padding:.85rem 1.1rem;border-left:2px solid var(--accent);animation:fadeIn .25s ease}
+.pub-abstract.open{display:block}
+.pub-abstract p{font-size:.845rem;color:var(--t2);line-height:1.78}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.pbtn-abs{color:var(--accent);border-color:rgba(100,255,218,.3);background:var(--a-dim)}
+.pbtn-abs:hover{background:var(--accent);color:var(--bg)}
+.pbtn-abs .chevron{transition:transform .25s}
+.pbtn-abs.open .chevron{transform:rotate(180deg)}
+[data-theme="light"] .pbtn-abs{color:#0055cc;border-color:rgba(0,85,204,.3);background:rgba(0,85,204,.06)}
+[data-theme="light"] .pbtn-abs:hover{background:#0055cc;color:#fff}
 .pub-btns{display:flex;gap:.55rem;flex-wrap:wrap}
 .pbtn{display:inline-flex;align-items:center;gap:.38rem;padding:.28rem .72rem;border-radius:6px;font-size:.76rem;font-weight:500;text-decoration:none;cursor:pointer;transition:all .2s;border:1px solid;font-family:'Inter',sans-serif}
 .pbtn-doi{color:var(--accent);border-color:rgba(100,255,218,.3);background:var(--a-dim)}
@@ -485,7 +496,11 @@ footer a{color:var(--accent);text-decoration:none}
                 <div class="pub-title">Magnitude Difference Conditioned All-in-One Image Restoration</div>
                 <div class="pub-authors"><strong>J. Bae</strong> and J. Shin</div>
                 <div class="pub-venue">IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026</div>
+                <div class="pub-abstract" id="abs1">
+                    <p>All-in-one image restoration aims to recover clean images from multiple types of degradation — including noise, blur, haze, rain, and low-light — within a single unified model. We propose a magnitude-difference conditioned framework that diagnoses degradation type and severity by analyzing frequency-domain magnitude differences between the degraded observation and a reference. This conditioning signal enables the restoration network to apply precise, degradation-aware corrections without requiring explicit degradation-type labels at inference time.</p>
+                </div>
                 <div class="pub-btns">
+                    <button class="pbtn pbtn-abs" onclick="toggleAbs('abs1',this)"><i class="fas fa-chevron-down chevron"></i> Abstract</button>
                     <span class="pbtn pbtn-pre"><i class="fas fa-clock"></i> Preprint</span>
                     <button class="pbtn pbtn-bib" onclick="copyBib('bib1')"><i class="fas fa-quote-right"></i> BibTeX</button>
                 </div>
@@ -507,7 +522,11 @@ footer a{color:var(--accent);text-decoration:none}
                 <div class="pub-title">Frequency Modulating Networks: Parameter-Efficient Spectral Refinement at Image and Feature Levels</div>
                 <div class="pub-authors"><strong>J. Bae</strong>, M. Park and J. Shin</div>
                 <div class="pub-venue">2025 IEEE International Conference on Consumer Electronics-Asia (ICCE-Asia), Busan, Korea, 2025</div>
+                <div class="pub-abstract" id="abs2">
+                    <p>We propose Frequency Modulating Networks (FMN), a parameter-efficient architecture for spectral refinement operating at both image and feature levels. FMN introduces lightweight frequency modulation modules that selectively amplify or suppress specific frequency bands in intermediate feature maps, enabling the network to recover fine-grained high-frequency details lost during degradation. Despite its minimal parameter overhead, FMN achieves significant improvements on image restoration benchmarks.</p>
+                </div>
                 <div class="pub-btns">
+                    <button class="pbtn pbtn-abs" onclick="toggleAbs('abs2',this)"><i class="fas fa-chevron-down chevron"></i> Abstract</button>
                     <span class="pbtn pbtn-pre"><i class="fas fa-clock"></i> Preprint</span>
                     <button class="pbtn pbtn-bib" onclick="copyBib('bib2')"><i class="fas fa-quote-right"></i> BibTeX</button>
                 </div>
@@ -528,7 +547,11 @@ footer a{color:var(--accent);text-decoration:none}
                 <div class="pub-title">MFG Sampling: Solving Inverse Problems in Multi-level High-Frequency Guidance via Diffusion Models</div>
                 <div class="pub-authors"><strong>J. Bae</strong> and J. Shin</div>
                 <div class="pub-venue">Applications of Medical Artificial Intelligence (AMAI 2025). Lecture Notes in Computer Science, vol 16206. Springer, Cham</div>
+                <div class="pub-abstract" id="abs3">
+                    <p>Solving inverse problems in medical imaging — such as reconstruction from under-sampled measurements — requires recovering high-frequency detail that is easily lost. We present MFG Sampling, a diffusion-based posterior sampling algorithm that incorporates multi-level high-frequency guidance throughout the reverse diffusion process. By injecting frequency-domain supervision at multiple scales, MFG Sampling steers the generative trajectory toward solutions with faithful fine-structure recovery, outperforming standard diffusion posterior sampling baselines on medical image reconstruction tasks.</p>
+                </div>
                 <div class="pub-btns">
+                    <button class="pbtn pbtn-abs" onclick="toggleAbs('abs3',this)"><i class="fas fa-chevron-down chevron"></i> Abstract</button>
                     <a href="https://doi.org/10.1007/978-3-032-09569-5_22" target="_blank" class="pbtn pbtn-doi">
                         <i class="fas fa-external-link-alt"></i> Paper / DOI
                     </a>
@@ -555,7 +578,11 @@ footer a{color:var(--accent);text-decoration:none}
                 <div class="pub-title">Robust Training Framework via Multi-Stage Feature Rectification</div>
                 <div class="pub-authors"><strong>J. Bae</strong> and J. Shin</div>
                 <div class="pub-venue">2025 International Technical Conference on Circuits/Systems, Computers, and Communications (ITC-CSCC), Seoul, Korea</div>
+                <div class="pub-abstract" id="abs4">
+                    <p>Deep neural networks are prone to feature-level inconsistencies that accumulate across layers during training, degrading model robustness and generalization. We propose a Robust Training Framework that introduces multi-stage feature rectification modules at intermediate network layers. These modules progressively detect and correct distributional drift in feature representations, producing more stable gradient flow and improving performance on visual recognition benchmarks, particularly under domain shift and noisy-label conditions.</p>
+                </div>
                 <div class="pub-btns">
+                    <button class="pbtn pbtn-abs" onclick="toggleAbs('abs4',this)"><i class="fas fa-chevron-down chevron"></i> Abstract</button>
                     <a href="https://doi.org/10.1109/ITC-CSCC66376.2025.11137732" target="_blank" class="pbtn pbtn-doi">
                         <i class="fas fa-external-link-alt"></i> Paper / DOI
                     </a>
@@ -580,7 +607,11 @@ footer a{color:var(--accent);text-decoration:none}
                 <div class="pub-title">Handling Imbalanced Medical Dataset with Continuous Class Features using Improved Contrastive Learning</div>
                 <div class="pub-authors"><strong>J. Bae</strong> and J. Shin</div>
                 <div class="pub-venue">2025 International Conference on Artificial Intelligence in Information and Communication (ICAIIC), Fukuoka, Japan, 2025</div>
+                <div class="pub-abstract" id="abs5">
+                    <p>Medical datasets frequently exhibit severe class imbalance combined with continuous-valued class features — such as disease severity scores — which undermines standard classification and contrastive learning approaches. We propose an improved contrastive learning strategy that explicitly accounts for continuous label relationships when constructing positive and negative pairs, weighting contrastive gradients according to inter-sample label proximity. Our method significantly improves representation quality and downstream classification accuracy on imbalanced medical imaging datasets.</p>
+                </div>
                 <div class="pub-btns">
+                    <button class="pbtn pbtn-abs" onclick="toggleAbs('abs5',this)"><i class="fas fa-chevron-down chevron"></i> Abstract</button>
                     <a href="https://doi.org/10.1109/ICAIIC64266.2025.10920651" target="_blank" class="pbtn pbtn-doi">
                         <i class="fas fa-external-link-alt"></i> Paper / DOI
                     </a>
@@ -778,7 +809,7 @@ footer a{color:var(--accent);text-decoration:none}
 </section>
 
 <footer>
-    <p>Designed &amp; Built by Jungwoo Bae &nbsp;·&nbsp; <a href="mailto:bae.jungwoo@gmail.com">bae.jungwoo@gmail.com</a> &nbsp;·&nbsp; © 2025</p>
+    <p>Designed &amp; Built by Jungwoo Bae &nbsp;·&nbsp; <a href="mailto:bae.jungwoo@gmail.com">bae.jungwoo@gmail.com</a> &nbsp;·&nbsp; © <span id="yr"></span></p>
 </footer>
 
 <button id="top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
@@ -840,6 +871,15 @@ const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+// Footer year
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Abstract toggle
+function toggleAbs(id, btn) {
+    document.getElementById(id).classList.toggle('open');
+    btn.classList.toggle('open');
+}
 
 // BibTeX copy
 const toast = document.createElement('div');
