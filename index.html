@@ -233,6 +233,37 @@ section{padding:96px 0}
 .soc-lbl{font-size:.82rem;font-weight:600;color:var(--t1);display:block}
 .soc-sub{font-size:.74rem;color:var(--t2);display:block;margin-top:.1rem}
 
+/* ===== NEWS ===== */
+#news{background:var(--bg2)}
+.news-list{display:flex;flex-direction:column;gap:.85rem}
+.news-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.4rem;display:flex;align-items:flex-start;gap:1.1rem;transition:all .3s}
+.news-item:hover{border-color:var(--border-h);transform:translateX(4px);box-shadow:0 6px 24px var(--shadow)}
+.news-dot-wrap{display:flex;flex-direction:column;align-items:center;padding-top:.3rem;flex-shrink:0}
+.news-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.news-dot.upcoming{background:#ffc857}
+.news-dot.past{background:var(--t3)}
+.news-date{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--accent);white-space:nowrap;margin-bottom:.18rem}
+.news-date.upcoming{color:#ffc857}
+.news-date.past{color:var(--t3)}
+.news-body{flex:1}
+.news-chip{display:inline-flex;align-items:center;gap:.35rem;padding:.18rem .6rem;border-radius:5px;font-size:.7rem;font-weight:600;font-family:'JetBrains Mono',monospace;margin-bottom:.35rem;border:1px solid}
+.nc-talk{background:rgba(100,255,218,.08);color:#64ffda;border-color:rgba(100,255,218,.25)}
+.nc-award{background:rgba(255,215,0,.08);color:#ffd700;border-color:rgba(255,215,0,.25)}
+.nc-paper{background:rgba(74,158,255,.1);color:#4a9eff;border-color:rgba(74,158,255,.25)}
+.nc-misc{background:rgba(196,113,255,.08);color:#c471ff;border-color:rgba(196,113,255,.25)}
+[data-theme="light"] .nc-talk{color:#00875a;border-color:rgba(0,135,90,.3);background:rgba(0,135,90,.07)}
+[data-theme="light"] .nc-award{color:#d97706;border-color:rgba(217,119,6,.3);background:rgba(217,119,6,.07)}
+[data-theme="light"] .nc-paper{color:#0055cc;border-color:rgba(0,85,204,.3);background:rgba(0,85,204,.07)}
+[data-theme="light"] .nc-misc{color:#6d28d9;border-color:rgba(109,40,217,.3);background:rgba(109,40,217,.07)}
+.news-text{font-size:.88rem;color:var(--t1);line-height:1.5;font-weight:500}
+.news-sub{font-size:.8rem;color:var(--t2);margin-top:.18rem}
+
+/* ===== BIBTEX ===== */
+.pbtn-bib{color:var(--t2);border-color:var(--border);background:transparent}
+.pbtn-bib:hover{color:var(--t1);border-color:var(--border-h);background:var(--card)}
+.bib-toast{position:fixed;bottom:5rem;left:50%;transform:translateX(-50%) translateY(10px);background:var(--card);border:1px solid var(--border);color:var(--accent);padding:.55rem 1.2rem;border-radius:8px;font-size:.82rem;font-family:'JetBrains Mono',monospace;opacity:0;pointer-events:none;transition:all .3s;z-index:2000;white-space:nowrap}
+.bib-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
 /* ===== FOOTER ===== */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:1.75rem 2rem;text-align:center;color:var(--t3);font-size:.84rem}
 footer a{color:var(--accent);text-decoration:none}
@@ -270,6 +301,7 @@ footer a{color:var(--accent);text-decoration:none}
 <nav>
     <a href="#home" class="nav-logo">JB.</a>
     <ul class="nav-links">
+        <li><a href="#news">News</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#publications">Publications</a></li>
@@ -285,6 +317,7 @@ footer a{color:var(--accent);text-decoration:none}
 </nav>
 
 <div class="mob-menu" id="mob-menu">
+    <a href="#news">News</a>
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#publications">Publications</a>
@@ -333,11 +366,37 @@ footer a{color:var(--accent);text-decoration:none}
     </div>
 </section>
 
+<!-- NEWS -->
+<section id="news">
+    <div class="wrap">
+        <div class="sec-hdr fi">
+            <span class="sec-tag">01 // News</span>
+            <h2 class="sec-title">Latest <span>News</span></h2>
+            <div class="divider"></div>
+        </div>
+        <div class="news-list fi fi-d1">
+
+            <div class="news-item">
+                <div class="news-dot-wrap">
+                    <div class="news-dot upcoming"></div>
+                </div>
+                <div>
+                    <div class="news-date upcoming">Tue, 5 May 2026 &nbsp;·&nbsp; 14:00 – 16:00</div>
+                    <span class="news-chip nc-talk"><i class="fas fa-chalkboard-teacher"></i> Poster</span>
+                    <div class="news-text">Poster presentation at <strong>ICASSP 2026</strong></div>
+                    <div class="news-sub">IEEE International Conference on Acoustics, Speech and Signal Processing</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
     <div class="wrap">
         <div class="sec-hdr fi">
-            <span class="sec-tag">01 // About</span>
+            <span class="sec-tag">02 // About</span>
             <h2 class="sec-title">About <span>Me</span></h2>
             <div class="divider"></div>
         </div>
@@ -374,7 +433,7 @@ footer a{color:var(--accent);text-decoration:none}
 <section id="education">
     <div class="wrap">
         <div class="sec-hdr fi">
-            <span class="sec-tag">02 // Education</span>
+            <span class="sec-tag">03 // Education</span>
             <h2 class="sec-title">My <span>Education</span></h2>
             <div class="divider"></div>
         </div>
@@ -407,7 +466,7 @@ footer a{color:var(--accent);text-decoration:none}
 <section id="publications">
     <div class="wrap">
         <div class="sec-hdr fi">
-            <span class="sec-tag">03 // Publications</span>
+            <span class="sec-tag">04 // Publications</span>
             <h2 class="sec-title">Research <span>Publications</span></h2>
             <div class="divider"></div>
         </div>
@@ -428,7 +487,14 @@ footer a{color:var(--accent);text-decoration:none}
                 <div class="pub-venue">IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2026</div>
                 <div class="pub-btns">
                     <span class="pbtn pbtn-pre"><i class="fas fa-clock"></i> Preprint</span>
+                    <button class="pbtn pbtn-bib" onclick="copyBib('bib1')"><i class="fas fa-quote-right"></i> BibTeX</button>
                 </div>
+                <textarea id="bib1" style="display:none">@inproceedings{bae2026magnitude,
+  title={Magnitude Difference Conditioned All-in-One Image Restoration},
+  author={Bae, Jungwoo and Shin, Jitae},
+  booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year={2026}
+}</textarea>
             </div>
 
             <!-- Paper 2 -->
@@ -443,7 +509,14 @@ footer a{color:var(--accent);text-decoration:none}
                 <div class="pub-venue">2025 IEEE International Conference on Consumer Electronics-Asia (ICCE-Asia), Busan, Korea, 2025</div>
                 <div class="pub-btns">
                     <span class="pbtn pbtn-pre"><i class="fas fa-clock"></i> Preprint</span>
+                    <button class="pbtn pbtn-bib" onclick="copyBib('bib2')"><i class="fas fa-quote-right"></i> BibTeX</button>
                 </div>
+                <textarea id="bib2" style="display:none">@inproceedings{bae2025frequency,
+  title={Frequency Modulating Networks: Parameter-Efficient Spectral Refinement at Image and Feature Levels},
+  author={Bae, Jungwoo and Park, Minseok and Shin, Jitae},
+  booktitle={2025 IEEE International Conference on Consumer Electronics-Asia (ICCE-Asia)},
+  year={2025}
+}</textarea>
             </div>
 
             <!-- Paper 3 -->
@@ -459,7 +532,18 @@ footer a{color:var(--accent);text-decoration:none}
                     <a href="https://doi.org/10.1007/978-3-032-09569-5_22" target="_blank" class="pbtn pbtn-doi">
                         <i class="fas fa-external-link-alt"></i> Paper / DOI
                     </a>
+                    <button class="pbtn pbtn-bib" onclick="copyBib('bib3')"><i class="fas fa-quote-right"></i> BibTeX</button>
                 </div>
+                <textarea id="bib3" style="display:none">@inproceedings{bae2025mfg,
+  title={MFG Sampling: Solving Inverse Problems in Multi-level High-Frequency Guidance via Diffusion Models},
+  author={Bae, Jungwoo and Shin, Jitae},
+  booktitle={Applications of Medical Artificial Intelligence (AMAI 2025)},
+  series={Lecture Notes in Computer Science},
+  volume={16206},
+  publisher={Springer, Cham},
+  doi={10.1007/978-3-032-09569-5_22},
+  year={2025}
+}</textarea>
             </div>
 
             <!-- Paper 4 -->
@@ -475,7 +559,16 @@ footer a{color:var(--accent);text-decoration:none}
                     <a href="https://doi.org/10.1109/ITC-CSCC66376.2025.11137732" target="_blank" class="pbtn pbtn-doi">
                         <i class="fas fa-external-link-alt"></i> Paper / DOI
                     </a>
+                    <button class="pbtn pbtn-bib" onclick="copyBib('bib4')"><i class="fas fa-quote-right"></i> BibTeX</button>
                 </div>
+                <textarea id="bib4" style="display:none">@inproceedings{bae2025robust,
+  title={Robust Training Framework via Multi-Stage Feature Rectification},
+  author={Bae, Jungwoo and Shin, Jitae},
+  booktitle={2025 International Technical Conference on Circuits/Systems, Computers, and Communications (ITC-CSCC)},
+  pages={1--5},
+  doi={10.1109/ITC-CSCC66376.2025.11137732},
+  year={2025}
+}</textarea>
             </div>
 
             <!-- Paper 5 -->
@@ -492,7 +585,15 @@ footer a{color:var(--accent);text-decoration:none}
                         <i class="fas fa-external-link-alt"></i> Paper / DOI
                     </a>
                     <span class="pbtn pbtn-award"><i class="fas fa-trophy"></i> Excellent Paper Award</span>
+                    <button class="pbtn pbtn-bib" onclick="copyBib('bib5')"><i class="fas fa-quote-right"></i> BibTeX</button>
                 </div>
+                <textarea id="bib5" style="display:none">@inproceedings{bae2025handling,
+  title={Handling Imbalanced Medical Dataset with Continuous Class Features using Improved Contrastive Learning},
+  author={Bae, Jungwoo and Shin, Jitae},
+  booktitle={2025 International Conference on Artificial Intelligence in Information and Communication (ICAIIC)},
+  doi={10.1109/ICAIIC64266.2025.10920651},
+  year={2025}
+}</textarea>
             </div>
 
         </div>
@@ -503,7 +604,7 @@ footer a{color:var(--accent);text-decoration:none}
 <section id="experience">
     <div class="wrap">
         <div class="sec-hdr fi">
-            <span class="sec-tag">04 // Experience</span>
+            <span class="sec-tag">05 // Experience</span>
             <h2 class="sec-title">Research <span>Experience</span></h2>
             <div class="divider"></div>
         </div>
@@ -548,7 +649,7 @@ footer a{color:var(--accent);text-decoration:none}
 <section id="awards">
     <div class="wrap">
         <div class="sec-hdr fi">
-            <span class="sec-tag">05 // Awards</span>
+            <span class="sec-tag">06 // Awards</span>
             <h2 class="sec-title">Awards &amp; <span>Honors</span></h2>
             <div class="divider"></div>
         </div>
@@ -577,7 +678,7 @@ footer a{color:var(--accent);text-decoration:none}
 <section id="skills">
     <div class="wrap">
         <div class="sec-hdr fi">
-            <span class="sec-tag">06 // Skills</span>
+            <span class="sec-tag">07 // Skills</span>
             <h2 class="sec-title">Skills &amp; <span>Technologies</span></h2>
             <div class="divider"></div>
         </div>
@@ -614,6 +715,12 @@ footer a{color:var(--accent);text-decoration:none}
                     <span class="sk fr">English &nbsp;·&nbsp; OPIc IH</span>
                 </div>
             </div>
+            <div class="skill-grp">
+                <div class="sk-title"><i class="fas fa-certificate"></i> Certifications</div>
+                <div class="sk-items">
+                    <span class="sk fr">ADSP &nbsp;(데이터 준분석기사)</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -622,7 +729,7 @@ footer a{color:var(--accent);text-decoration:none}
 <section id="contact">
     <div class="wrap">
         <div class="sec-hdr fi">
-            <span class="sec-tag">07 // Contact</span>
+            <span class="sec-tag">08 // Contact</span>
             <h2 class="sec-title">Get In <span>Touch</span></h2>
             <div class="divider"></div>
         </div>
@@ -733,6 +840,21 @@ const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+// BibTeX copy
+const toast = document.createElement('div');
+toast.className = 'bib-toast';
+toast.textContent = '✓ BibTeX copied to clipboard!';
+document.body.appendChild(toast);
+let toastTimer;
+function copyBib(id) {
+    const text = document.getElementById(id).value.trim();
+    navigator.clipboard.writeText(text).then(() => {
+        clearTimeout(toastTimer);
+        toast.classList.add('show');
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+    });
+}
 
 // Active nav
 const sections = document.querySelectorAll('section[id]');
